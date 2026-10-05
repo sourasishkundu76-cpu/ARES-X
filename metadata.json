@@ -1,0 +1,6 @@
+{
+  "name": "ARES-X Autonomous Radar Response Core",
+  "description": "Embedded tactical radar and closed-loop non-projectile defense telemetry laboratory featuring real-time 3D digital twin, 180-degree polar scope, and serial diagnostics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

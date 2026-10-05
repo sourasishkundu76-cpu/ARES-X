@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --surface-lowest: #0a0e15;
+    --surface-low: #181c23;
+    --surface-container: #1c2027;
+    --surface-high: #262a32;
+    --surface-highest: #31353d;
+    --surface: #10131b;
+    --surface-tint: #00e38b;
+    --primary-container: #00ff9d;
+    --on-primary-container: #007143;
+    --secondary: #bdf4ff;
+    --secondary-fixed-dim: #00daf3;
+    --on-surface: #dfe2ed;
+    --on-surface-variant: #b9cbbc;
+    --error: #ff3366;
+    --on-error: #690005;
+    --outline: #849587;
+    --outline-variant: #3b4a3f;
+  }
+
+  html.light-mode {
+    --surface-lowest: #ffffff;
+    --surface-low: #f8fafc;
+    --surface-container: #eef2f6;
+    --surface-high: #e2e8f0;
+    --surface-highest: #cbd5e1;
+    --surface: #f1f4f9;
+    --surface-tint: #059669;
+    --primary-container: #059669;
+    --on-primary-container: #ffffff;
+    --secondary: #0284c7;
+    --secondary-fixed-dim: #0284c7;
+    --on-surface: #0b1329;
+    --on-surface-variant: #475569;
+    --error: #dc2626;
+    --on-error: #ffffff;
+    --outline: #64748b;
+    --outline-variant: #94a3b8;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--surface);
+    color: var(--on-surface);
+    font-family: 'JetBrains Mono', monospace;
+    overscroll-behavior: none;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--surface-lowest);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--surface-high);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--surface-tint);
+  }
+}
+
+/* Custom theme helper classes */
+.bg-surface { background-color: var(--surface); }
+.bg-surface-container-lowest { background-color: var(--surface-lowest); }
+.bg-surface-container-low { background-color: var(--surface-low); }
+.bg-surface-container { background-color: var(--surface-container); }
+.bg-surface-container-high { background-color: var(--surface-high); }
+.bg-surface-container-highest { background-color: var(--surface-highest); }
+
+.bg-primary-container { background-color: var(--primary-container); }
+.text-primary-container { color: var(--primary-container); }
+.text-on-primary-container { color: var(--on-primary-container); }
+
+.bg-surface-tint { background-color: var(--surface-tint); }
+.text-surface-tint { color: var(--surface-tint); }
+
+.text-secondary { color: var(--secondary); }
+.text-secondary-fixed-dim { color: var(--secondary-fixed-dim); }
+.bg-secondary-fixed-dim { background-color: var(--secondary-fixed-dim); }
+
+.text-on-surface { color: var(--on-surface); }
+.text-on-surface-variant { color: var(--on-surface-variant); }
+
+.text-error { color: var(--error); }
+.bg-error { background-color: var(--error); }
+.text-on-error { color: var(--on-error); }
+
+.border-outline-variant { border-color: var(--outline-variant); }
+
+/* Typography */
+.font-headline-xl { font-family: 'Space Mono', monospace; font-size: 32px; line-height: 40px; font-weight: 700; letter-spacing: -0.02em; }
+.font-headline-lg { font-family: 'Space Mono', monospace; font-size: 24px; line-height: 32px; font-weight: 700; letter-spacing: -0.01em; }
+.font-headline-md { font-family: 'Space Mono', monospace; font-size: 18px; line-height: 24px; font-weight: 700; letter-spacing: 0.02em; }
+.font-headline-sm { font-family: 'Space Mono', monospace; font-size: 14px; line-height: 20px; font-weight: 700; letter-spacing: 0.04em; }
+
+.font-body-lg { font-family: 'JetBrains Mono', monospace; font-size: 15px; line-height: 24px; }
+.font-body-md { font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 18px; }
+.font-body-sm { font-family: 'JetBrains Mono', monospace; font-size: 11px; line-height: 16px; }
+
+.font-label-lg { font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.08em; }
+.font-label-md { font-family: 'JetBrains Mono', monospace; font-size: 10px; line-height: 14px; font-weight: 500; letter-spacing: 0.1em; }
+.font-label-sm { font-family: 'JetBrains Mono', monospace; font-size: 9px; line-height: 12px; font-weight: 700; letter-spacing: 0.14em; }
+
+/* Spacing tokens */
+.px-margin { padding-left: 1rem; padding-right: 1rem; }
+.px-space-xs { padding-left: 0.25rem; padding-right: 0.25rem; }
+.py-space-xs { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.p-space-xs { padding: 0.25rem; }
+.px-space-sm { padding-left: 0.5rem; padding-right: 0.5rem; }
+.py-space-sm { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.p-space-sm { padding: 0.5rem; }
+.px-space-md { padding-left: 0.75rem; padding-right: 0.75rem; }
+.py-space-md { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+.p-space-md { padding: 0.75rem; }
+.gap-space-xs { gap: 0.25rem; }
+.gap-space-sm { gap: 0.5rem; }
+.gap-space-md { gap: 0.75rem; }
+.mb-space-xs { margin-bottom: 0.25rem; }
+.mb-space-sm { margin-bottom: 0.5rem; }
+.mt-space-xs { margin-top: 0.25rem; }
+.mt-space-sm { margin-top: 0.5rem; }
